@@ -29,7 +29,7 @@ public class TestaDijkstra {
         int nVertices = Integer.parseInt(in.readLine());
         System.out.print("No. arestas:");
         int nArestas = Integer.parseInt(in.readLine());
-        System.out.print("Raiz da ACMC:");
+        System.out.print("Raiz:");
         int raiz = Integer.parseInt(in.readLine());
         Grafo grafo = new Grafo(nVertices);
         for (int i = 0; i < nArestas; i++) {
@@ -38,10 +38,11 @@ public class TestaDijkstra {
             grafo.insereAresta(a.v1(), a.v2(), a.peso());
             grafo.insereAresta(a.v2(), a.v1(), a.peso());
         }
-        grafo.imprime();
         Dijkstra dj = new Dijkstra(grafo);
         dj.obterArvoreCMC(raiz);
+        System.out.println("\nPesos:");
         dj.imprime();
-        dj.imprimeCaminho(0, 2);
+        System.out.println("Caminho da raiz até o vértice 4:");
+        dj.imprimeCaminho(raiz, 4);
     }
 }

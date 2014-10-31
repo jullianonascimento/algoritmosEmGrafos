@@ -13,13 +13,13 @@ public class Dijkstra {
 
     public void obterArvoreCMC(int raiz) throws Exception {
         int n = this.grafo.numVertices();
-        this.p = new double[n]; // @{\it peso dos v\'ertices}@
-        int vs[] = new int[n + 1]; // @{\it v\'ertices}@
+        this.p = new double[n]; // peso dos vértices
+        int vs[] = new int[n + 1]; // vértices
         this.antecessor = new int[n];
         for (int u = 0; u < n; u++) {
             this.antecessor[u] = -1;
-            p[u] = Double.MAX_VALUE; // @$\infty$@
-            vs[u + 1] = u; // @{\it Heap indireto a ser constru\'{\i}do}@
+            p[u] = Double.MAX_VALUE; // infinito
+            vs[u + 1] = u; //Heap indireto a ser construído
         }
         p[raiz] = 0;
         FPHeapMinIndireto heap = new FPHeapMinIndireto(p, vs);

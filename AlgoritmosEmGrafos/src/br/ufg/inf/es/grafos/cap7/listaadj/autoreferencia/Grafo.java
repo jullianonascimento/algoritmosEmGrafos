@@ -51,7 +51,7 @@ public class Grafo {
         for (int i = 0; i < this.numVertices; i++) {
             this.adj[i] = new Lista();
         }
-    }  //@\lstcontinue@
+    }  
 
     public void insereAresta(int v1, int v2, int peso) {
         Celula item = new Celula(v2, peso);
@@ -68,15 +68,15 @@ public class Grafo {
     }
 
     public Aresta primeiroListaAdj(int v) {
-        // @{\it Retorna a primeira aresta que o v\'ertice v participa ou}@
-        // @{\it {\bf NULL} se a lista de adjac\^encia de v for vazia}@ 
+        // Retorna a primeira aresta que o vértice v participa ou
+        //NULL se a lista de adjacência de v for vazia
         Celula item = (Celula) this.adj[v].primeiro();
         return item != null ? new Aresta(v, item.vertice, item.peso) : null;
     }
 
     public Aresta proxAdj(int v) {
-        // @{\it Retorna a pr\'oxima aresta que o v\'ertice v participa ou}@
-        // @{\it {\bf null} se a lista de adjac\^encia de v estiver no fim}@
+        // Retorna a próxima aresta que o vértice v participa ou
+        //  null se a lista de adjacência de v estiver no fim
         Celula item = (Celula) this.adj[v].proximo();
         return item != null ? new Aresta(v, item.vertice, item.peso) : null;
     }

@@ -8,7 +8,6 @@ public class Lista {
         Celula prox;
     }
     private Celula primeiro, ultimo, pos;
-    // @{\it Opera\c{c}\~oes}@
 
     public Lista() { // @{\it Cria uma Lista vazia}@
         this.primeiro = new Celula();
